@@ -56,7 +56,16 @@ a.card:active{transform:scale(.99)}
     </a>
   </div>
 
-  <footer>&copy; 2026 Oatmeal Morning</footer>
+  <footer>&copy; 2026 Oatmeal Morning &middot; <a href="/privacy/">Privacy</a></footer>
 </main>
+<script>
+/* Anonymous usage counts via PostHog: page views and which app card was tapped. No cookies. */
+window.__ph=[];
+window.track=function(ev,props){try{if(window.posthog&&posthog.__loaded)posthog.capture(ev,props||{});else window.__ph.push([ev,props||{}])}catch(e){}};
+document.addEventListener('click',function(e){var a=e.target.closest('a.card');if(a)track('app_card_click',{app:a.classList.contains('sk8')?'sk8':'ocd'})});
+</script>
+<script src="https://us-assets.i.posthog.com/static/array.js" async crossorigin="anonymous"
+ onload="try{posthog.init('phc_qo4wiAUHZxUNwLi2nGGmHVEUX4cZxUcMNEMy5vxG6jBW',{api_host:'https://us.i.posthog.com',persistence:'localStorage',autocapture:false,capture_pageview:true,capture_pageleave:false,disable_session_recording:true,disable_surveys:true});posthog.register({app:'studio'});window.__ph.forEach(function(q){posthog.capture(q[0],q[1])});window.__ph=[]}catch(e){}"
+ onerror="window.track=function(){}"></script>
 </body>
 </html>
