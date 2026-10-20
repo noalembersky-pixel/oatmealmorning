@@ -20,12 +20,12 @@
 @media (min-width:600px){.cards{grid-template-columns:1fr 1fr;max-width:560px}}
 .card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 16px 20px;border-radius:12px;background:var(--bg);border:2px solid transparent;box-shadow:var(--shadow);color:var(--ink);font-weight:500;transition:background .18s,border-color .18s,transform .1s}
 a.card:hover{background:var(--lavender);border-color:var(--accent);text-decoration:none}
+a.card.sk8:hover{background:#2c2836;border-color:#7EE8D0}
 a.card:active{transform:scale(.99)}
 .card .art{width:72px;height:72px;object-fit:contain}
 .card .name{font-weight:700;font-size:19px;line-height:1.2}
 .card .what{color:var(--muted);font-size:14px;font-weight:600;margin:0}
 .card .go{display:inline-flex;align-items:center;gap:5px;margin-top:4px;background:var(--accent);color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
-.card.soon{cursor:default}
 .card.sk8{background:#23222E;color:#fff;border-color:transparent;box-shadow:0 2px 12px rgba(20,20,40,.25)}
 .card.sk8 .art{width:92px;height:92px;object-fit:contain}
 .card.sk8 .name{font-size:24px;letter-spacing:.04em}
@@ -48,12 +48,12 @@ a.card:active{transform:scale(.99)}
       <span class="go">Open the app &rarr;</span>
     </a>
 
-    <div class="card soon sk8" aria-label="SK8, coming soon">
+    <a class="card sk8" href="https://sk8.oatmealmorning.com/">
       <img class="art" src="/sk8-art.png" alt="">
       <span class="name"><span class="s">S</span><span class="k">K</span><span class="e">8</span></span>
-      <p class="what">A tiny skateboarding game by Guy. Lacing up.</p>
-      <span class="go">Coming soon</span>
-    </div>
+      <p class="what">Kick, ollie, flip and grind through one night street. A tiny game by Guy.</p>
+      <span class="go">Play &rarr;</span>
+    </a>
   </div>
 
   <footer>&copy; 2026 Oatmeal Morning</footer>
