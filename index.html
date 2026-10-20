@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Oatmeal Morning</title>
+<meta name="description" content="Oatmeal Morning makes small apps for everyday life. Home of OCD: Off, Closed, Done and SK8.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oatmeal Morning">
+<meta property="og:description" content="Small apps for everyday life.">
+<meta property="og:url" content="https://oatmealmorning.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/site.css">
+<style>
+.studio{min-height:100svh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding-top:40px}
+.logo{width:120px;height:120px;margin:0 auto 14px;display:block}
+.wordmark{font-size:34px;font-weight:700;letter-spacing:-.01em;margin:0}
+.tagline{margin:8px auto 0;color:var(--muted);font-weight:600;max-width:320px;text-wrap:balance}
+.cards{display:grid;gap:16px;margin:36px auto 0;max-width:420px;width:100%}
+@media (min-width:600px){.cards{grid-template-columns:1fr 1fr;max-width:560px}}
+.card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 16px 20px;border-radius:12px;background:var(--bg);border:2px solid transparent;box-shadow:var(--shadow);color:var(--ink);font-weight:500;transition:background .18s,border-color .18s,transform .1s}
+a.card:hover{background:var(--lavender);border-color:var(--accent);text-decoration:none}
+a.card:active{transform:scale(.99)}
+.card .art{width:72px;height:72px}
+.card .name{font-weight:700;font-size:19px;line-height:1.2}
+.card .what{color:var(--muted);font-size:14px;font-weight:600;margin:0}
+.card .go{display:inline-flex;align-items:center;gap:5px;margin-top:4px;background:var(--accent);color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
+.card.soon{box-shadow:none;border:1.5px dashed var(--line);cursor:default}
+.card.soon .go{background:var(--lavender);color:var(--accent)}
+.ico{fill:none;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ico .sh{stroke:var(--accent);stroke-width:3.6;transform:translate(1.4px,1.2px)}
+.ico .ln{stroke:var(--ink);stroke-width:1.9}
+.studio footer{justify-content:center;margin-top:44px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<main class="page studio">
+  <!-- Logo placeholder: a hand-drawn bowl of oatmeal. Swap for the real logo when it exists. -->
+  <svg class="logo ico wob" viewBox="0 0 100 100" role="img" aria-label="Oatmeal Morning">
+    <g class="sh"><path d="M18 50 Q50 58 82 50 Q80 80 50 84 Q20 80 18 50 Z"/><path d="M40 20 q-5 8 0 15"/><path d="M60 16 q-5 8 0 15"/></g>
+    <g class="ln"><path d="M18 50 Q50 58 82 50 Q80 80 50 84 Q20 80 18 50 Z"/><path d="M18 50 Q50 42 82 50"/><path d="M40 20 q-5 8 0 15"/><path d="M60 16 q-5 8 0 15"/><path d="M50 26 q-4 7 0 13"/><path d="M34 72 q16 10 32 0"/></g>
+  </svg>
+  <h1 class="wordmark">Oatmeal Morning</h1>
+  <p class="tagline">Small apps for everyday life. Warm, simple, and ready before you've finished your coffee.</p>
+
+  <div class="cards">
+    <a class="card" href="https://ocd.oatmealmorning.com/">
+      <img class="art" src="/ocd-icon.png" alt="">
+      <span class="name">OCD: Off, Closed, Done</span>
+      <p class="what">The checklist for anyone who gets halfway down the street wondering if they locked the door.</p>
+      <span class="go">Open the app &rarr;</span>
+    </a>
+
+    <div class="card soon" aria-label="SK8, coming soon">
+      <svg class="art ico wob" viewBox="0 0 100 100" aria-hidden="true">
+        <g class="sh"><path d="M14 52 q10 14 22 14 h28 q12 0 22 -14"/><circle cx="34" cy="76" r="6"/><circle cx="66" cy="76" r="6"/></g>
+        <g class="ln"><path d="M14 52 q10 14 22 14 h28 q12 0 22 -14"/><circle cx="34" cy="76" r="6"/><circle cx="66" cy="76" r="6"/><path d="M36 66 v5 M64 66 v5"/><path d="M22 40 q4 -14 14 -16 M78 40 q-4 -14 -14 -16"/></g>
+      </svg>
+      <span class="name">SK8</span>
+      <p class="what">A little skateboarding game by Guy. Lacing up.</p>
+      <span class="go">Coming soon</span>
+    </div>
+  </div>
+
+  <footer>&copy; 2026 Oatmeal Morning</footer>
+</main>
+</body>
+</html>
