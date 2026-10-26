@@ -5,64 +5,201 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
 <title>Oatmeal Morning</title>
-<meta name="description" content="Oatmeal Morning is a small studio making apps we actually use. Home of OCD: Off, Closed, Done and SK8.">
+<meta name="description" content="Oatmeal Morning makes small apps and games. Home of OCD: Off, Closed, Done and SK8.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Oatmeal Morning">
-<meta property="og:description" content="A small studio making apps we actually use.">
+<meta property="og:description" content="Making small apps and games.">
 <meta property="og:url" content="https://oatmealmorning.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/site.css">
 <style>
-.studio{min-height:100svh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding-top:40px}
-.logo{width:120px;height:120px;margin:0 auto 14px;display:block}
-.wordmark{font-size:38px;margin-top:8px;font-weight:700;letter-spacing:-.01em;margin:0}
-.tagline{margin:8px auto 0;color:var(--muted);font-weight:600;max-width:320px;text-wrap:balance}
-.cards{display:grid;gap:16px;margin:36px auto 0;max-width:420px;width:100%}
-@media (min-width:600px){.cards{grid-template-columns:1fr 1fr;max-width:560px}}
-.card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 16px 20px;border-radius:12px;background:var(--bg);border:2px solid transparent;box-shadow:var(--shadow);color:var(--ink);font-weight:500;transition:background .18s,border-color .18s,transform .1s}
-a.card:hover{background:var(--lavender);border-color:var(--accent);text-decoration:none}
-a.card.sk8:hover{background:#2c2836;border-color:#7EE8D0}
-a.card:active{transform:scale(.99)}
-.card .art{width:72px;height:72px;object-fit:contain}
-.card .name{font-weight:700;font-size:19px;line-height:1.2}
-.card .what{color:var(--muted);font-size:14px;font-weight:600;margin:0}
-.card .go{display:inline-flex;align-items:center;gap:5px;margin-top:4px;background:var(--accent);color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}
-.card.sk8{background:#23222E;color:#fff;border-color:transparent;box-shadow:0 2px 12px rgba(20,20,40,.25)}
-.card.sk8 .art{width:92px;height:92px;object-fit:contain}
-.card.sk8 .name{font-size:24px;letter-spacing:.04em}
-.card.sk8 .s{color:#7EE8D0}.card.sk8 .k{color:#A8F0C8}.card.sk8 .e{color:#F58BB8}
-.card.sk8 .what{color:#C9C7D6}
-.card.sk8 .go{background:#FFD24A;color:#1F1F22}
-.studio footer{justify-content:center;margin-top:44px}
+:root{
+  --oat:#F6ECDB; --oat-line:#E3D2B4;
+  --night:#1d1530; --night-2:#2a2044; --mint:#7ff0cf; --pink:#ff6fa8; --sun:#ffd34d; --night-muted:#C9C2DE;
+  --lav-shadow:0 10px 30px -12px rgba(98,0,234,.28);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-left,0px))}
+@media (max-width:380px){.wrap{padding-inline:18px}}
+
+/* ---------- Hero ---------- */
+.hero-studio{display:grid;align-items:center;gap:12px;padding-block:20px 48px}
+.hero-art{order:-1;width:min(300px,78vw);margin:0 auto}
+.hero-art svg{display:block;width:100%;height:auto;overflow:visible}
+.wordmark{margin:0;font-size:clamp(52px,10vw,96px);line-height:.94;font-weight:700;letter-spacing:-.035em;color:var(--ink)}
+.wordmark span{display:block}
+.wordmark .m{position:relative;display:inline-block}
+.wordmark .m svg{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.32em;overflow:visible}
+.tagline{margin:32px 0 0;font-size:clamp(19px,2.3vw,23px);line-height:1.35;font-weight:600;color:var(--ink);max-width:24ch;text-wrap:balance}
+.byline{margin:10px 0 0;color:var(--muted);font-weight:600;font-size:16px}
+.to-apps{display:inline-flex;align-items:center;gap:8px;margin-top:30px;font-size:17px;color:var(--accent);padding:6px 2px}
+.to-apps svg{width:26px;height:34px;transition:transform .3s var(--ease)}
+.to-apps:hover{text-decoration:none}
+.to-apps:hover svg{transform:translateY(4px)}
+@media (min-width:820px){
+  .hero-studio{grid-template-columns:1.05fr .95fr;gap:32px;min-height:min(80svh,620px);padding-block:40px 32px}
+  .hero-art{order:0;width:min(440px,100%);margin:0 0 0 auto}
+}
+
+/* the purple underline draws itself once on load */
+@media (prefers-reduced-motion:no-preference){
+  .wordmark .m svg path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .8s var(--ease) .9s forwards}
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- Apps shelf ---------- */
+.apps{padding-block:24px 40px;scroll-margin-top:24px}
+.apps h2{margin:0 0 28px;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.02em;line-height:1.1}
+.shelf{display:grid;gap:28px}
+.app{display:grid;gap:20px 32px;align-items:center;border-radius:24px;padding:28px}
+.app h3{margin:0;font-size:clamp(22px,2.6vw,27px);line-height:1.15;letter-spacing:-.01em}
+.app .what{margin:8px 0 0;max-width:46ch}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-top:20px}
+.go{display:inline-block;border-radius:999px;padding:11px 22px;font-weight:700;font-size:16px;transition:transform .15s var(--ease),filter .15s}
+.go:hover{text-decoration:none;filter:brightness(1.07)}
+.go:active{transform:scale(.97)}
+.small-links{display:flex;gap:16px;font-size:15px}
+.small-links a{font-weight:600}
+.app-art{transition:transform .35s var(--ease)}
+.app:hover .app-art{transform:translateY(-4px) rotate(-2deg)}
+
+/* OCD: lavender, sticker-style icon */
+.app.ocd{background:var(--lavender)}
+.app.ocd .app-art{width:128px;height:128px;border-radius:28px;background:#fff;box-shadow:var(--lav-shadow);display:grid;place-items:center;rotate:-4deg}
+.app.ocd .app-art img{width:100px;height:100px}
+.app.ocd .what{color:var(--shade)}
+.app.ocd .go{background:var(--accent);color:#fff;box-shadow:0 3px 8px rgba(98,0,234,.25)}
+.app.ocd .small-links a{color:var(--shade)}
+
+/* SK8: its own night palette; Guy's skater jumps out of the frame */
+.app.sk8{background:var(--night);color:#fff;margin-top:64px}
+.app.sk8 .app-art{width:190px;margin:-110px auto -12px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+.app.sk8 .app-art img{width:100%;height:auto;display:block}
+.app.sk8 h3{font-size:clamp(30px,3.6vw,38px);letter-spacing:.03em}
+.app.sk8 .s,.app.sk8 .k{color:var(--mint)}
+.app.sk8 .e{color:var(--pink)}
+.app.sk8 .what{color:var(--night-muted)}
+.app.sk8 .go{background:var(--sun);color:var(--night)}
+.app.sk8 .small-links a{color:var(--night-muted)}
+.app.sk8 a:focus-visible{outline-color:var(--sun)}
+.app.sk8:hover .app-art{transform:translateY(-6px) rotate(3deg)}
+
+/* The empty slot for whatever comes next */
+.app.next{background:#fff;border:2px dashed var(--line);grid-template-columns:auto 1fr;padding:22px 24px;gap:18px}
+.app.next svg{width:64px;height:52px}
+.app.next p{margin:0;color:var(--muted);font-weight:600}
+.app.next strong{display:block;color:var(--ink);font-size:18px}
+
+@media (min-width:640px){
+  .app.ocd{grid-template-columns:auto 1fr;padding:36px 40px}
+  .app.sk8{grid-template-columns:1fr auto;padding:36px 40px;margin-top:40px}
+  .app.sk8 .app-art{order:2;width:210px;margin:-120px 8px -40px 0}
+}
+
+/* ---------- Kitchen + contact ---------- */
+.kitchen{display:grid;gap:28px;padding-block:64px 8px}
+.kitchen h2{margin:0 0 10px;font-size:24px;letter-spacing:-.01em}
+.kitchen p{margin:0;max-width:44ch}
+.kitchen .mail{display:inline-block;margin-top:8px;font-size:clamp(17px,2.2vw,20px);word-break:break-all}
+@media (min-width:720px){.kitchen{grid-template-columns:1fr 1fr;gap:48px}}
+
+.site-foot footer{padding-bottom:40px}
+
+/* sun variant: the sun tucks in behind the end of the wordmark */
+.hero-studio.sun .hero-art{width:min(340px,86vw)}
+@media (min-width:820px){.hero-studio.sun{grid-template-columns:1fr 1fr}.hero-studio.sun .hero-art{width:min(520px,120%);margin:0 0 0 -110px;position:relative;z-index:-1}}
+@media (prefers-reduced-motion:no-preference){.rays path{animation:rise .9s var(--ease) both}.rays path:nth-child(odd){animation-delay:.12s}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
 </style>
 </head>
 <body>
-<main class="page studio">
-  <h1 class="wordmark">Oatmeal Morning</h1>
-  <p class="tagline">A small studio making apps we actually use.</p>
+<main>
+  <section class="wrap hero-studio sun">
+    <div>
+      <h1 class="wordmark"><span>Oatmeal</span><span class="m">Morning<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 20 C 60 8, 120 26, 180 14 S 270 10, 296 18" fill="none" stroke="#6200EA" stroke-width="7" stroke-linecap="round"/></svg></span></h1>
+      <p class="tagline">Making small apps and games.</p>
+      <p class="byline">Made by Guy and Noa.</p>
+      <a class="to-apps" href="#apps">See what's cooking
+        <svg viewBox="0 0 26 34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 C 16 10, 8 16, 13 30"/><path d="M6 23 L13 31 L20 23"/></svg>
+      </a>
+    </div>
 
-  <div class="cards">
-    <a class="card" href="https://ocd.oatmealmorning.com/">
-      <img class="art" src="/ocd-icon.png" alt="">
-      <span class="name">OCD: Off, Closed, Done</span>
-      <p class="what">The checklist for anyone who gets halfway down the street wondering if they locked the door.</p>
-      <span class="go">Open the app &rarr;</span>
-    </a>
+    <div class="hero-art">
+      <svg viewBox="0 0 400 300" role="img" aria-label="A hand-drawn lavender sun rising over the horizon">
+  <path d="M46 248 C 48 166, 116 96, 200 96 C 284 96, 352 166, 354 248 Z" fill="#F3ECFF"/>
+  <g stroke="#1F1F22" stroke-linecap="round" fill="none">
+    <g class="rays" stroke-width="6"><path d="M30.0 202.3 L-0.9 194.0"/><path d="M55.2 148.0 L35.4 134.3"/><path d="M103.0 101.1 L83.2 71.1"/><path d="M158.7 76.9 L150.3 41.9"/><path d="M220.4 73.2 L224.6 37.4"/><path d="M276.4 89.4 L286.8 67.8"/><path d="M323.1 122.2 L339.9 105.1"/><path d="M360.2 175.2 L393.0 160.3"/><path d="M374.5 224.9 L410.2 220.2"/></g>
+    <path d="M8 250 C 90 245, 170 253, 250 248 S 360 245, 394 251" stroke-width="6"/>
+    <path d="M110 272 L176 270 M230 276 L276 275" stroke-width="4" opacity=".45"/>
+  </g>
+</svg>
+    </div>
+  </section>
 
-    <a class="card sk8" href="https://sk8.oatmealmorning.com/">
-      <img class="art" src="/sk8-art.png" alt="">
-      <span class="name"><span class="s">S</span><span class="k">K</span><span class="e">8</span></span>
-      <p class="what">Kick, ollie, flip and grind through one night street. A tiny game by Guy.</p>
-      <span class="go">Play &rarr;</span>
-    </a>
-  </div>
+  <section class="wrap apps" id="apps" aria-labelledby="apps-title">
+    <h2 id="apps-title">Fresh from the pot</h2>
+    <div class="shelf">
 
-  <footer>&copy; 2026 Oatmeal Morning &middot; <a href="/privacy/">Privacy</a></footer>
+      <article class="app ocd">
+        <div class="app-art"><img src="/ocd-icon.png" alt="" width="100" height="100"></div>
+        <div>
+          <h3>OCD: Off, Closed, Done</h3>
+          <p class="what">The checklist for anyone who gets halfway down the street wondering if they locked the door.</p>
+          <div class="actions">
+            <a class="go" data-app="ocd" data-link="open" href="https://ocd.oatmealmorning.com/">Open the app</a>
+            <span class="small-links">
+              <a data-app="ocd" data-link="privacy" href="https://ocd.oatmealmorning.com/privacy/">Privacy</a>
+              <a data-app="ocd" data-link="support" href="https://ocd.oatmealmorning.com/support/">Support</a>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="app sk8">
+        <div class="app-art"><img src="/sk8-art.png" alt="SK8's skater mid-jump, holding a skateboard over his head" width="513" height="620"></div>
+        <div>
+          <h3 aria-label="SK8"><span class="s">S</span><span class="k">K</span><span class="e">8</span></h3>
+          <p class="what">Kick, ollie, flip and grind through one night street. A tiny game by Guy.</p>
+          <div class="actions">
+            <a class="go" data-app="sk8" data-link="open" href="https://sk8.oatmealmorning.com/">Play SK8</a>
+            <span class="small-links">
+              <a data-app="sk8" data-link="privacy" href="https://sk8.oatmealmorning.com/privacy/">Privacy</a>
+              <a data-app="sk8" data-link="support" href="https://sk8.oatmealmorning.com/support/">Support</a>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <div class="app next">
+        <svg viewBox="0 0 64 52" aria-hidden="true" fill="none" stroke="#B9B6C3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 24 C 20 22, 44 26, 60 23"/><path d="M6 24 C 8 46, 56 46, 58 24"/><path d="M26 8 C 22 4, 30 0, 27 -4"/><path d="M38 10 C 34 6, 42 2, 39 -2"/>
+        </svg>
+        <p><strong>Something else is simmering.</strong>More apps soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wrap kitchen" aria-label="About and contact">
+    <div>
+      <h2>Who's in the kitchen</h2>
+      <p>Guy makes the first build of every app and game. Noa takes it from there and does all the work around it, from polish to launch to support.</p>
+    </div>
+    <div>
+      <h2>Say hi</h2>
+      <p>Questions, bugs, or a kind word:</p>
+      <a class="mail" href="mailto:oatmealmorningstudio@gmail.com">oatmealmorningstudio@gmail.com</a>
+    </div>
+  </section>
 </main>
+
+<div class="wrap site-foot"><footer>&copy; 2026 Oatmeal Morning <a href="/privacy/">Privacy</a> <a href="mailto:oatmealmorningstudio@gmail.com">Contact</a></footer></div>
+
 <script>
-/* Anonymous usage counts via PostHog: page views and which app card was tapped. No cookies. */
+/* Anonymous usage counts via PostHog: page views and which app link was tapped. No cookies. */
 window.__ph=[];
 window.track=function(ev,props){try{if(window.posthog&&posthog.__loaded)posthog.capture(ev,props||{});else window.__ph.push([ev,props||{}])}catch(e){}};
-document.addEventListener('click',function(e){var a=e.target.closest('a.card');if(a)track('app_card_click',{app:a.classList.contains('sk8')?'sk8':'ocd'})});
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-app]');if(a)track('app_card_click',{app:a.dataset.app,link:a.dataset.link})});
 </script>
 <script src="https://us-assets.i.posthog.com/static/array.js" async crossorigin="anonymous"
  onload="try{posthog.init('phc_qo4wiAUHZxUNwLi2nGGmHVEUX4cZxUcMNEMy5vxG6jBW',{api_host:'https://us.i.posthog.com',persistence:'localStorage',autocapture:false,capture_pageview:true,capture_pageleave:false,disable_session_recording:true,disable_surveys:true});posthog.register({app:'studio'});try{if(location.search.indexOf('tester=1')>-1)localStorage.setItem('om-tester','1');if(localStorage.getItem('om-tester')==='1')posthog.register({is_internal:true})}catch(e){}window.__ph.forEach(function(q){posthog.capture(q[0],q[1])});window.__ph=[]}catch(e){}"
