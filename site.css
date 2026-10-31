@@ -3,7 +3,7 @@
 :root{
   color-scheme:light;
   --bg:#FFFFFF; --ink:#1F1F22; --muted:#77757F; --line:#D6D4DC;
-  --accent:#6200EA; --lavender:#F3ECFF; --shade:#46454C;
+  --accent:#D6336C; --lavender:#FFE8EF; --shade:#46454C;
   --shadow:0 2px 10px rgba(30,20,60,.09);
   --font:'Quicksand',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
