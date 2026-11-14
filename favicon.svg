@@ -2,9 +2,13 @@
   <rect width="64" height="64" rx="14" fill="#FFF8EE"/>
   <path d="M13 47 C 13.4 35, 21.5 26.5, 32 26.5 C 42.8 26.2, 50.6 35.4, 51 47 Z" fill="#FF7AAE"/>
   <g stroke="#1F1F22" stroke-linecap="round" fill="none" stroke-width="4">
-    <path d="M32 8 L32 15.5"/>
-    <path d="M17.5 13.5 L21.5 19.5"/><path d="M46.5 13.5 L42.5 19.5"/>
-    <path d="M7.5 25.5 L13.5 28.5"/><path d="M56.5 25.5 L50.5 28.5"/>
+    <path d="M54.2 37.8 L60.6 35.1"/>
+    <path d="M49.0 30.0 L53.9 25.1"/>
+    <path d="M41.2 24.8 L43.9 18.4"/>
+    <path d="M32.0 23.0 L32.0 16.0"/>
+    <path d="M22.8 24.8 L20.1 18.4"/>
+    <path d="M15.0 30.0 L10.1 25.1"/>
+    <path d="M9.8 37.8 L3.4 35.1"/>
     <path d="M6.5 47.5 C 23 46, 41 48.8, 57.5 46.8"/>
   </g>
 </svg>
