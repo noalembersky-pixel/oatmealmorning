@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#FFF8EE">
 <title>Oatmeal Morning</title>
-<meta name="description" content="Oatmeal Morning makes small apps and games. Home of OCD: Off, Closed, Done and SK8: Hell Yeah.">
+<meta name="description" content="Oatmeal Morning makes small apps and games. Home of OCD: Off, Closed, Done, SK8: Hell Yeah and Soul Shredder.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Oatmeal Morning">
 <meta property="og:description" content="Making small apps and games.">
@@ -90,6 +90,17 @@
 .app.sk8 a:focus-visible{outline-color:var(--sun)}
 .app.sk8:hover .app-art{transform:translateY(-6px) rotate(3deg)}
 
+/* Soul Shredder: the game's own hell palette (bone, mint soul-fire, orange title) */
+.app.ss{--ss-bg:#0b0710;--ss-ink:#f0e4bc;--ss-mint:#3ad69c;--ss-orange:#ff8a2a;background:var(--ss-bg);color:var(--ss-ink);box-shadow:inset 0 0 0 3px #2a0a14}
+.app.ss .app-art{width:128px;height:128px;rotate:4deg;filter:drop-shadow(0 0 18px rgba(58,214,156,.35))}
+.app.ss .app-art img{width:128px;height:128px;border-radius:28px;image-rendering:pixelated;display:block}
+.app.ss h3{color:var(--ss-orange);letter-spacing:.01em;text-shadow:3px 3px 0 #14060e}
+.app.ss .what{color:#bfb28e}
+.app.ss .go{background:var(--ss-mint);color:#14060e}
+.app.ss .small-links a{color:#bfb28e}
+.app.ss a:focus-visible{outline-color:var(--ss-mint)}
+.app.ss:hover .app-art{transform:translateY(-4px) rotate(-3deg)}
+
 /* The empty slot for whatever comes next */
 .app.next{background:transparent;border:2px dashed var(--line);grid-template-columns:auto 1fr;padding:22px 24px;gap:18px}
 .app.next svg{width:64px;height:52px}
@@ -100,6 +111,7 @@
   .app.ocd{grid-template-columns:auto 1fr;padding:36px 40px}
   .app.sk8{grid-template-columns:1fr auto;padding:36px 40px;margin-top:40px}
   .app.sk8 .app-art{order:2;width:210px;margin:-120px 8px -40px 0}
+  .app.ss{grid-template-columns:auto 1fr;padding:36px 40px}
 }
 
 /* ---------- Kitchen + contact ---------- */
@@ -171,6 +183,21 @@
             <span class="small-links">
               <a data-app="sk8" data-link="privacy" href="https://sk8.oatmealmorning.com/privacy/">Privacy</a>
               <a data-app="sk8" data-link="support" href="https://sk8.oatmealmorning.com/support/">Support</a>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="app ss">
+        <div class="app-art"><img src="/soulshredder-icon.png" alt="Soul Shredder's grim reaper skull with green soul-fire" width="128" height="128"></div>
+        <div>
+          <h3>Soul Shredder</h3>
+          <p class="what">A grim reaper quits his job to skate. Escape hell, learn from five street skaters and win your first contest. A pixel-art game by Guy.</p>
+          <div class="actions">
+            <a class="go" data-app="soulshredder" data-link="open" href="https://soulshredder.oatmealmorning.com/">Play Soul Shredder</a>
+            <span class="small-links">
+              <a data-app="soulshredder" data-link="privacy" href="https://soulshredder.oatmealmorning.com/privacy/">Privacy</a>
+              <a data-app="soulshredder" data-link="support" href="https://soulshredder.oatmealmorning.com/support/">Support</a>
             </span>
           </div>
         </div>
